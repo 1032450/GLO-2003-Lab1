@@ -7,11 +7,11 @@ import org.glassfish.jersey.server.ResourceConfig;
 import java.net.URI;
 
 public class Main {
-    public static final String BASE_URI = "http://0.0.0.0:8080/";
+    public static final String BASE_URI = "http://0.0.0.0:8080";
 
     public static HttpServer startServer() {
         final ResourceConfig rc = new ResourceConfig()
-                .register(new HealthResource());
+                .register(new Products());
 
         return GrizzlyHttpServerFactory.createHttpServer(URI.create(BASE_URI), rc);
     }
